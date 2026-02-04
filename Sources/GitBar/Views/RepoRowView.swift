@@ -196,23 +196,25 @@ struct StatusBadge: View {
 
 // MARK: - Preview
 
-#Preview {
-    VStack(spacing: 0) {
-        RepoRowView(
-            repo: .preview(name: "gitbar", branch: "main"),
-            editorCommand: "code"
-        )
-        Divider()
-        RepoRowView(
-            repo: .preview(name: "my-api", branch: "feature/auth", modified: 3, unpushed: 2),
-            editorCommand: "code"
-        )
-        Divider()
-        RepoRowView(
-            repo: .preview(name: "broken-project", branch: "develop", modified: 1, conflicts: 2),
-            editorCommand: "code"
-        )
+struct RepoRowView_Previews: PreviewProvider {
+    static var previews: some View {
+        VStack(spacing: 0) {
+            RepoRowView(
+                repo: .preview(name: "gitbar", branch: "main"),
+                editorCommand: "code"
+            )
+            Divider()
+            RepoRowView(
+                repo: .preview(name: "my-api", branch: "feature/auth", modified: 3, unpushed: 2),
+                editorCommand: "code"
+            )
+            Divider()
+            RepoRowView(
+                repo: .preview(name: "broken-project", branch: "develop", modified: 1, conflicts: 2),
+                editorCommand: "code"
+            )
+        }
+        .frame(width: 380)
+        .padding()
     }
-    .frame(width: 380)
-    .padding()
 }

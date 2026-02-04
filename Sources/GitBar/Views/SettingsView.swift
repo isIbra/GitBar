@@ -146,7 +146,7 @@ struct SettingsView: View {
                     // MARK: - Launch at Login
                     settingsSection("General", icon: "gearshape") {
                         Toggle("Launch GitBar at login", isOn: $settings.launchAtLogin)
-                            .onChange(of: settings.launchAtLogin) { _, newValue in
+                            .onChange(of: settings.launchAtLogin) { newValue in
                                 updateLaunchAtLogin(newValue)
                             }
                     }
@@ -203,6 +203,8 @@ struct SettingsView: View {
 
 // MARK: - Preview
 
-#Preview {
-    SettingsView(settings: .shared)
+struct SettingsView_Previews: PreviewProvider {
+    static var previews: some View {
+        SettingsView(settings: .shared)
+    }
 }

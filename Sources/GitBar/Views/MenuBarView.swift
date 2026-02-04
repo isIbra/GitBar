@@ -206,7 +206,8 @@ struct MenuBarView: View {
 
 // MARK: - Preview
 
-#Preview {
-    let state = AppState()
-    MenuBarView(appState: state)
+struct MenuBarView_Previews: PreviewProvider {
+    static var previews: some View {
+        MenuBarView(appState: AppState())
+    }
 }
