@@ -12,9 +12,7 @@ let package = Package(
         .executableTarget(
             name: "GitBar",
             path: "Sources/GitBar",
-            resources: [
-                .copy("Resources/Info.plist")
-            ]
+            exclude: ["Resources/Info.plist"]
         )
     ]
 )
